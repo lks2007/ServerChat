@@ -14,7 +14,7 @@ class Dashboard:
         # self.window.iconbitmap('images')
         self.window.resizable(False, False)
 
-        self.load = Image.open('/home/lks444/dashboard_frame.png')
+        self.load = Image.open('./images/dashboard_frame.png')
         self.render = ImageTk.PhotoImage(self.load)
 
         self.image_panel = Label(self.window, image=self.render)
