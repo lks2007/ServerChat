@@ -14,7 +14,7 @@ class Dashboard:
         # self.window.iconbitmap('images')
         self.window.resizable(False, False)
 
-        self.load = Image.open('./images/dashboard_frame.png')
+        self.load = Image.open('/home/lks444/dashboard_frame.png')
         self.render = ImageTk.PhotoImage(self.load)
 
         self.image_panel = Label(self.window, image=self.render)
@@ -22,7 +22,7 @@ class Dashboard:
         self.image_panel.pack(fill='both', expand='yes')
 
         """ ======Label====== """
-        self.log = 'Not start server of chat !'
+        self.log = 'Server chat is not start !'
         self.log_label = Label(self.window, text=self.log, bg="#2f3640", fg="#ffffff", font=("yu gothic ui", 12, "bold"))
         self.log_label.place(x=1139, y=395, anchor="center", width=385, height=540)
 
@@ -71,7 +71,7 @@ class Dashboard:
             else:
                 tkinter.messagebox.showerror(title='Error port', message='Error port is incorrect')
 
-        if portNumber() >= 1024:
+        if portNumber() >= 1024 or not portNumber() == '':
             port = portNumber()
 
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
